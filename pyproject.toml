@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mifobio"
+dynamic = ["version"]
+authors = [
+    {name = "Nicolas Guigui", email = "nicolas.guigui@espci.fr"},
+    {name = "Paul Balondrade", email = "paul.balondrade@espci.fr"},
+    {name = "Victor Barolle", email = "Victor.barolle@espci.fr"}
+]
+readme = "README.rst"
+description = "Non Invasive imaging by Digital Holography"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.10",
+]
+requires-python = ">= 3.8"
+dependencies=[
+    "matplotlib",
+    "numpy",
+    "notebook"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "mifobio.__version__"}
+
+[tool.setuptools.packages.find]
+include = [
+    "mifobio",
+    "mifobio.*"
+]
